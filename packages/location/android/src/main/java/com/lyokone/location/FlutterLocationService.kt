@@ -233,16 +233,20 @@ class FlutterLocationService : Service(), PluginRegistry.RequestPermissionsResul
     fun isInForegroundMode(): Boolean = isForeground
 
     fun enableBackgroundMode() {
-        if (isForeground) {
-            Log.d(TAG, "Service already in foreground mode.")
-        } else {
-            Log.d(TAG, "Start service in foreground mode.")
-
-            val notification = backgroundNotification!!.build()
-            startForeground(ONGOING_NOTIFICATION_ID, notification)
-
-            isForeground = true
-        }
+        /*
+            Remove showing of notification
+            when background mode is true
+         */
+//        if (isForeground) {
+//            Log.d(TAG, "Service already in foreground mode.")
+//        } else {
+//            Log.d(TAG, "Start service in foreground mode.")
+//
+//            val notification = backgroundNotification!!.build()
+//            startForeground(ONGOING_NOTIFICATION_ID, notification)
+//
+//            isForeground = true
+//        }
     }
 
     fun disableBackgroundMode() {
